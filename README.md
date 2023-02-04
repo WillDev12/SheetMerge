@@ -14,8 +14,6 @@
    
 </p>
 
-### ATTENTION ⚠️: THIS PROJECT IS A WORK IN PROGRESS! PLEASE MAKE SURE TO LET ME KNOW IF THERE IS SOMETHING YOU WANT ADDED BY CREATING A PULL REQUEST
-
 # SheetMerge
 
 SheetMerge allows you to program multiple Google Sheets at once minus the hassle of defining hundreds of things.
