@@ -40,7 +40,7 @@ function yourFunction() {
 
 If the logger logs the active sheet used in the link, than the program is fully installed.
 
-There are many more things you can do besides this, and [here](https://github.com/WillDev12/SheetMerge/blob/main/README.md#there-is-much-more-than-just-that-so-here-is-a-full-list-of-pre-built-functions-provided) is a proper list of all of them.
+There are many more things you can do besides this, and [here](https://github.com/WillDev12/SheetMerge#there-is-much-more-than-just-that-so-here-is-a-full-list-of-pre-built-functions-provided) is a full list of all of them
 
 - - -
 
