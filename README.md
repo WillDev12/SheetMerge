@@ -1,6 +1,6 @@
 # SheetMerge
 
-SheetMerge allows you to program multiple Google Sheets without the hassle of defining hundreds of things.
+SheetMerge allows you to program multiple Google Sheets at once minus the hassle of defining hundreds of things.
 
 # How to install
 
