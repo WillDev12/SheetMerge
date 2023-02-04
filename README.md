@@ -192,4 +192,12 @@ function getFonts() {
 
   You can view my source[^1] [here](https://github.com/WillDev12/SheetMerge/blob/main/library/lib.gs)
   
+# Interested in this kind of content?
+
+Follow my [profile](https://github.com/WillDev12) for more awesome programs like this one!
+```
+https://github.com/WillDev12
+WEBSITE COMING SOON
+```
+  
 [^1]: Copyright © Willdevv12 2023
