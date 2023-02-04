@@ -190,6 +190,6 @@ function getFonts() {
 
 # Source
 
-  You can view my source[^1] [here]()
+  You can view my source[^1] [here](https://github.com/WillDev12/SheetMerge/blob/main/library/lib.gs)
   
 [^1]: Copyright © Willdevv12 2023
