@@ -199,4 +199,4 @@ Check out my [profile](https://github.com/WillDev12) or share it! (This means a 
 https://github.com/WillDev12
 ```
   
-[^1]: Copyright © Willdevv12 2023
+[^1]: Copyright © WillDev12 2023
