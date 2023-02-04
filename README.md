@@ -4,7 +4,7 @@ SheetMerge allows you to program multiple Google Sheets without the hassle of de
 
 # How to install
 
-Here is a brief tutorial on how to install. If you are interested in how to use, see [here]()
+Here is a brief tutorial on how to install. If you are interested in how to use, see [here](https://github.com/WillDev12/SheetMerge#how-to-use)
 
 1. Go to Google Sheets
 
