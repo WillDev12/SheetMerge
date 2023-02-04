@@ -194,10 +194,9 @@ function getFonts() {
   
 # Interested in this kind of content?
 
-Follow my [profile](https://github.com/WillDev12) for more awesome programs like this one!
+Check out my [profile](https://github.com/WillDev12) or share it! (This means a lot to me)
 ```
 https://github.com/WillDev12
-WEBSITE COMING SOON
 ```
   
 [^1]: Copyright © Willdevv12 2023
