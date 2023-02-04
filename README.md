@@ -59,3 +59,137 @@ function getValues() {
 
 }
 ```
+
+You can even use the SheetMerge library to edit the sheet remotely!
+
+``` javascript
+function changeText() {
+
+  SheetMerge.setCell("A1", "Test text", link);
+  Logger.log(SheetMerge.getValue("A1", link));
+
+}
+```
+
+- - -
+
+Editing Sheets are easy when it comes to SheetMerge
+
+``` javascript
+var link = "%link%";
+
+function editSheets() {
+
+  var name = SheetMerge.getSheetName(link);
+  var id = SheetMerge.getSheetId(link);
+
+  //Gets the name and id of the open sheet remotely
+
+  SheetMerge.renameActiveSheet("newName", link);
+
+  //Renames the sheet of your choice
+
+  SheetMerge.insertSheet("sheetName", link);
+  SheetMerge.copySheet("newName", link);
+  SheetMerge.duplicateActiveSheet(link);
+
+  //Insert and copy sheets
+
+  SheetMerge.deleteActiveSheet(link);
+  SheetMerge.deleteSheet("sheetName", link);
+
+  //Delete unnecessary ones
+
+}
+```
+
+- - -
+
+Lots of font work is involved, so be warned!
+
+``` javascript
+var link = "%link%";
+
+function getFonts() {
+
+  var color = SheetMerge.getFontColor("A1", link),
+      size = SheetMerge.getFontSize("A1", link),
+      style = SheetMerge.getFontStyle("A1", link),
+      weight = SheetMerge.getFontWeight("A1", link),
+      family = SheetMerge.getFontFamily("A1", link);
+
+  //Get font properties
+
+  SheetMerge.setFontColor("A1", "#fff", link);
+  SheetMerge.setCellFontSize("A1", "10", link);
+  SheetMerge.setFontStyle("A1", "italic", link);
+  SheetMerge.setFontWeight("A1", "bold", link);
+  SheetMerge.setFontFamily("A1", "times new roman", link);
+
+  //Change font properties
+
+}
+```
+
+- - -
+
+# There is much more than just that, so here is a full list of pre-built functions provided:
+
+  * Sheets & stuff
+      * getActiveSheet(link)
+      * getSpreadsheetName(link)
+      * getSpreadsheetID(link)
+      * getSheetId(link)
+      * getSheetName(link)
+      * getURL(link) //This one doesn't really make sense does it..
+      * copySheet(newName, link)
+      * deleteActiveSheet(link)
+      * deleteSheet(sheetName, link)
+      * duplicateActiveSheet(link)
+      * renameActiveSheet(newName, link)
+      * insertSheet(name, link)
+  * People
+      * getViewers(link)
+      * getOwner(link)
+  * Cells & editing
+      * getA1(range, link)
+      * getCellBorder(range, link)
+      * getFontColor(range, link)
+      * getFontSize(range, link)
+      * getCellRow(range, link)
+      * getCellColumn(range, link)
+      * getValue(range, link)
+  * Surroundings
+      * getLastColumn(range, link)
+      * getLastRow(range, link)
+  * Fonts
+      * getFontStyle(range, link)
+      * getFontFamily(range, link)
+      * getFontWeight(range, link)
+  * Setting
+      * setCell(cell, text, link)
+      * setCellBorder(range, top, left, bottom, right, link) // :O
+      * setCellFontSize(cell, size, link)
+      * setFontColor(range, color, link)
+      * setFontStyle(range, style, link)
+      * setFontFamily(range, font, link)
+      * setFontWeight(range, weight, link)
+      * setRowHeight(row, height, link)
+      * setColumnWidth(column, width, link)
+  * Formulas
+      * setFormula(range, formula, link)
+      * getFormula(range, link)
+  * Deletion
+      * clearRange(range, link)
+      * deleteRow(rowNum, link)
+      * deleteRows(row, howMany, link)
+      * deleteColumn(columnNum, link)
+      * deleteColumns(column, howMany, link)
+  * Misc
+      * setTabColor(color, link)
+
+# Source
+
+  You can view my source[^1] [here]()
+  
+[^1]: Copyright © Willdevv12 2023
