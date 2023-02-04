@@ -1,8 +1,20 @@
-### ATTENTION ⚠️: THIS PROJECT IS A WORK IN PROGRESS! PLEASE MAKE SURE TO LET ME KNOW IF THERE IS SOMETHING YOU WANT ADDED BY CREATING A PULL REQUEST
+<p align="center">
 
-![Follow My GitHub](https://img.shields.io/github/followers/WillDev12?color=success&label=Follow%20My%20Github&logo=GitHub&style=for-the-badge)
-![Forks](https://img.shields.io/github/forks/WillDev12/SheetMerge?style=for-the-badge)
-![Watchers](https://img.shields.io/github/watchers/WillDev12/SheetMerge?style=for-the-badge)
+  <a href="https://github.com/WillDev12">
+    <img src="https://img.shields.io/github/followers/WillDev12?color=success&label=Follow%20My%20Github&logo=GitHub&style=for-the-badge">
+    
+  <a href="https://github.com/WillDev12/SheetMerge">
+    <img src="https://img.shields.io/github/forks/WillDev12/SheetMerge?style=for-the-badge">
+    
+  <a href="https://github.com/WillDev12/SheetMerge">
+    <img src="https://img.shields.io/github/watchers/WillDev12/SheetMerge?style=for-the-badge">
+  
+  <a href="https://github.com/WillDev12/SheetMerge">
+    <img src="https://img.shields.io/github/stars/WillDev12/SheetMerge?style=for-the-badge">
+   
+</p>
+
+### ATTENTION ⚠️: THIS PROJECT IS A WORK IN PROGRESS! PLEASE MAKE SURE TO LET ME KNOW IF THERE IS SOMETHING YOU WANT ADDED BY CREATING A PULL REQUEST
 
 # SheetMerge
 
