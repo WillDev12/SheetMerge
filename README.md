@@ -1,3 +1,4 @@
+<p align="center"><img src="https://camo.githubusercontent.com/8b3ff7d037bfd150af02ae206242e91dcda05e19435f693f92eef01147b5ad23/68747470733a2f2f696d672e69636f6e73382e636f6d2f637574652d636c69706172742f3531322f676f6f676c652d7368656574732e706e67" width="300" height="320"></p>
 <p align="center">
 
   <a href="https://github.com/WillDev12">
@@ -76,6 +77,15 @@ function getValues() {
 }
 ```
 
+If you do not already have a sheet to edit, you can easily make one like this:
+``` javascript
+function createNew() {
+
+  var sheet = SheetMerge.createNew('name'); //upon running, this returns the url of the new sheet for you to edit.
+
+}
+```
+
 You can even use the SheetMerge library to edit the sheet remotely!
 
 ``` javascript
@@ -150,6 +160,12 @@ function getFonts() {
 - - -
 
 # There is much more than just that, so here is a full list of pre-built functions provided:
+
+| Property | Type | Description |
+| :---    | :----: |       ---: |
+| getActiveSheet(link) | Sheets | Gets the current sheet of a Spreadsheet |
+| getSpreadsheetName(link) | Sheets | Gets the name of a spreadsheet from a link |
+| getSpreadsheetID(link) | Sheets | Gets the ID of a sheet from it's link |
 
   * Sheets & stuff
       * getActiveSheet(link)
