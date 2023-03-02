@@ -1,4 +1,5 @@
 // Ⓒ Willdevv12 2023 //
+function createSpreadsheet(name) {return SpreadsheetApp.create(name).getUrl();}
 function getActiveSheet(link) {var cache = CacheService.getScriptCache();var ss = SpreadsheetApp.openByUrl(link);return ss.getActiveSheet().getName();}
 function getSpreadsheetName(link) {return SpreadsheetApp.openByUrl(link).getName();}
 function getSpreadsheetID(link) {return SpreadsheetApp.openByUrl(link).getId();}
