@@ -5,7 +5,7 @@ function getSpreadsheetName(link) {return SpreadsheetApp.openByUrl(link).getName
 function getSpreadsheetID(link) {return SpreadsheetApp.openByUrl(link).getId();}
 function getSheetId(link) {return SpreadsheetApp.openByUrl(link).getActiveSheet().getSheetId();}
 function getSheetName(link) {return SpreadsheetApp.openByUrl(link).getActiveSheet().getSheetName();}
-function getURL(link) {return SpreadsheetApp.openByUrl(link).getUrl();}
+function getURL(id) {return SpreadsheetApp.openById(id).getUrl();}
 function getViewers(link) {return SpreadsheetApp.openByUrl(link).getViewers();}
 function getOwner(link) {return SpreadsheetApp.openByUrl(link).getOwner();}
 function getA1(range, link) {return SpreadsheetApp.openByUrl(link).getRange(range).getA1Notation();}
