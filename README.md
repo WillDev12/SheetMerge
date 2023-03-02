@@ -162,10 +162,13 @@ function getFonts() {
 # There is much more than just that, so here is a full list of pre-built functions provided:
 
 | Property | Type | Description |
-| :---    | :----: |       ---: |
+| :---    | :----: | :----: |
 | getActiveSheet(link) | Sheets | Gets the current sheet of a Spreadsheet |
 | getSpreadsheetName(link) | Sheets | Gets the name of a spreadsheet from a link |
 | getSpreadsheetID(link) | Sheets | Gets the ID of a sheet from it's link |
+| getSheetName(link) | Sheets | Gets the name of the active sheet |
+| getURL(id) | Sheets | Gets the url of a Spreadsheet from the ID |
+| copySheet(newname, link) | Sheets | Copies a Spreadsheet |
 
   * Sheets & stuff
       * getActiveSheet(link)
@@ -173,7 +176,7 @@ function getFonts() {
       * getSpreadsheetID(link)
       * getSheetId(link)
       * getSheetName(link)
-      * getURL(link) //This one doesn't really make sense does it..
+      * getURL(id)
       * copySheet(newName, link)
       * deleteActiveSheet(link)
       * deleteSheet(sheetName, link)
