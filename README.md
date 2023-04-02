@@ -169,59 +169,42 @@ function getFonts() {
 | getSheetName(link) | Sheets | Gets the name of the active sheet |
 | getURL(id) | Sheets | Gets the url of a Spreadsheet from the ID |
 | copySheet(newname, link) | Sheets | Copies a Spreadsheet |
-
-  * Sheets & stuff
-      * getActiveSheet(link)
-      * getSpreadsheetName(link)
-      * getSpreadsheetID(link)
-      * getSheetId(link)
-      * getSheetName(link)
-      * getURL(id)
-      * copySheet(newName, link)
-      * deleteActiveSheet(link)
-      * deleteSheet(sheetName, link)
-      * duplicateActiveSheet(link)
-      * renameActiveSheet(newName, link)
-      * insertSheet(name, link)
-  * People
-      * getViewers(link)
-      * getOwner(link)
-  * Cells & editing
-      * getA1(range, link)
-      * getCellBorder(range, link)
-      * getFontColor(range, link)
-      * getFontSize(range, link)
-      * getCellRow(range, link)
-      * getCellColumn(range, link)
-      * getValue(range, link)
-  * Surroundings
-      * getLastColumn(range, link)
-      * getLastRow(range, link)
-  * Fonts
-      * getFontStyle(range, link)
-      * getFontFamily(range, link)
-      * getFontWeight(range, link)
-  * Setting
-      * setCell(cell, text, link)
-      * setCellBorder(range, top, left, bottom, right, link) // :O
-      * setCellFontSize(cell, size, link)
-      * setFontColor(range, color, link)
-      * setFontStyle(range, style, link)
-      * setFontFamily(range, font, link)
-      * setFontWeight(range, weight, link)
-      * setRowHeight(row, height, link)
-      * setColumnWidth(column, width, link)
-  * Formulas
-      * setFormula(range, formula, link)
-      * getFormula(range, link)
-  * Deletion
-      * clearRange(range, link)
-      * deleteRow(rowNum, link)
-      * deleteRows(row, howMany, link)
-      * deleteColumn(columnNum, link)
-      * deleteColumns(column, howMany, link)
-  * Misc
-      * setTabColor(color, link)
+| deleteActiveSheet(link) | Sheets | Deletes the active sheet |
+| deleteSheet(sheetName, link) | Sheets | Deletes a sheet by its name |
+| duplicateActiveSheet(link) | Sheets | Duplicates the active sheet |
+| renameActiveSheet(newName, link) | Sheets | Renames the active sheet |
+| insertSheet(name, link) | Sheets | Inserts a new sheet |
+| getviewers(link) | People | Gets a list of all the active viewers and their emails |
+| getOwner(link) | People | Gets the owner of the document |
+| getA1(range, link) | Cells | Gets the A1 notation of a range |
+| getCellBorder(range, link) | Cells | Gets the border style of a range |
+| getFontColor(range, link) | Cells | Gets the font color of a range |
+| getFontSize(range, link) | Cells | Gets the font size of a range |
+| getCellRow(range, link) | Cells | Gets the row position of a range |
+| getCellColumn(range, link) | Cells | Gets the column position of a range |
+| getValue(range, link) | Cells | Gets the text of a cell or range |
+| getLastColumn(range, link) | Surroundings | Gets the last column used in the spreadsheet |
+| getLastRow(range, link) | Surroundings | Gets the last row used in the spreadsheet |
+| getFontStyle(range, link) | Fonts | Gets the font style of a range |
+| getFontFamily(range, link) | Fonts | Gets the font of a range |
+| getFontWeight(range, link) | Fonts | Gets the font weight of a range |
+| setCell(cell, text, link) | Setting | Sets a cell's text |
+| setCellBorder(range, top, left, bottom, right, link) | Setting | Sets the border weight of a range |
+| setCellFontSize(cell, size, link) | Setting | Sets the font size of a cell/range |
+| setFontColor(range, color, link) | Setting | Sets the font color of a cell/range |
+| setFontStyle(range, style, link) | Setting | Sets the font style of a cell/range |
+| setFontFamily(range, font, link) | Setting | Sets the font of a cell/range |
+| setFontWeight(range, weight, link) | Setting | Sets the font weight of a cell/range |
+| setRowHeight(row, height, link) | Setting | Sets the height of a specified row |
+| setColumnWidth(column, width, link) | Setting | Sets the width of a specified column |
+| setFormula(range, formula, link) | Formulas | Sets the fomula of a cell |
+| getFormula(range, link) | Formulas | Retrieves the formula of a cell |
+| clearRange(range, link) | Deletion | Clears the text of a range |
+| deleteRow(rowNum, link) | Deletion | Deletes a row |
+| deleteRows(row, howMany, link) | Deletion | Deletes multiple rows |
+| deleteColumn(columnNum, link) | Deletion | Deletes a column |
+| deleteColumns(column, howMany, link) | Deletion | Deletes multiple columns |
+| setTabColor(color, link) | Misc | Honestly I don't even know what this one does either :'> |
 
 # Source
 
