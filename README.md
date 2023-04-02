@@ -68,7 +68,7 @@ var link = "%link%";
 
 function getValues() {
 
-  var text = SheetMerge.getValue("A1", link),
+  let text = SheetMerge.getValue("A1", link),
       font = SheetMerge.getFontFamily("A1", link),
       size = SheetMerge.getFontSize("A1", link);
 
@@ -138,7 +138,7 @@ var link = "%link%";
 
 function getFonts() {
 
-  var color = SheetMerge.getFontColor("A1", link),
+  let color = SheetMerge.getFontColor("A1", link),
       size = SheetMerge.getFontSize("A1", link),
       style = SheetMerge.getFontStyle("A1", link),
       weight = SheetMerge.getFontWeight("A1", link),
