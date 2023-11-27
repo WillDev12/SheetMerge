@@ -166,6 +166,10 @@ function getFonts() {
 | getActiveSheet(link) | Sheets | Gets the current sheet of a Spreadsheet |
 | getSpreadsheetName(link) | Sheets | Gets the name of a spreadsheet from a link |
 | getSpreadsheetID(link) | Sheets | Gets the ID of a sheet from it's link |
+| copySpreadsheet(newName) | Sheets | This function copies the active spreadsheet and allows users to provide a custom name for the copied spreadsheet. |
+| copySpreadsheet() | Sheets | This function copies the active spreadsheet and automatically names the copy as "Copy of [original spreadsheet name]" |
+| copySheet(sourceSheet, newSheetName) | Sheets | This function copies a specific sheet within the active spreadsheet and assigns a new name to the copied sheet. |
+| getSheetUrl() | Sheets | This function retrieves the URL of the active spreadsheet |
 | getSheetName(link) | Sheets | Gets the name of the active sheet |
 | getURL(id) | Sheets | Gets the url of a Spreadsheet from the ID |
 | copySheet(newname, link) | Sheets | Copies a Spreadsheet |
@@ -213,8 +217,10 @@ function getFonts() {
 # Interested in this kind of content?
 
 Check out my [profile](https://github.com/WillDev12) or share it! (This means a lot to me)
+Also a huge thanks to my contributers!
 ```
 https://github.com/WillDev12
+https://github.com/cloud-dark
 ```
   
 [^1]: Copyright © WillDev12 2023
