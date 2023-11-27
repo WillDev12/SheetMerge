@@ -32,7 +32,7 @@ Here is a brief tutorial on how to install. If you are interested in how to use,
 4. Paste the following ID and press look up:
 
 ```
-17-iwEaZVMqeY7-7jnTyI9lu4ThNP8fpPzf4AEb93IdRkJKvIcJ6S4SO9
+1MYnIAX-fSzeMQXHUGTrphcyFiwcSCC-fybI4CjqWj7Yv_E_5EymHxiAa
 ```
 5. Select a version and apply
 
