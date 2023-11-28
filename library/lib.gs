@@ -1,18 +1,62 @@
 /**
- * membuat pop up / alert di spreadsheet
- * @param {string} message - Teks pop up yang di inginkan
- * @return {string} status -  Status pesan, anda bisa menggantinya dengan warning, danger, ataupun success
+ * Displays a dialog with a QR Code based on the provided text.
+ * @param {string}  text - The text to be converted into a QR Code.
  */
+function generateQRCodeDialog(text) {
+  var htmlOutput = HtmlService.createHtmlOutput('<img src="' + generateQRCodeUrl(text) + '">')
+    .setWidth(200)
+    .setHeight(200);
+  
+  SpreadsheetApp.getUi().showModalDialog(htmlOutput, 'QR Code');
+}
 
+/**
+ * Generates the QR Code URL based on the provided text.
+ * @param {string}  text - The text to be converted into a QR Code.
+ * @returns {string} chartUrl - The generated QR Code URL.
+ */
+function generateQRCodeUrl(text) {
+  var encodedText = encodeURIComponent(text);
+  var chartUrl = 'https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=' + encodedText;
+  Logger.log(chartUrl)
+  return chartUrl;
+}
+
+/**
+ * Generates the base64-encoded image of the QR Code based on the provided text and logs it.
+ * @param {string}  text - The text to be converted into a QR Code.
+ */
+function generateQRCodeAndLogBase64(text) {
+  var qrCodeBase64 = generateQRCodeBase64(text);
+  Logger.log("QR Code Base64: " + qrCodeBase64);
+}
+
+/**
+ * Generates the base64-encoded image of the QR Code based on the provided text.
+ * @param {string}  text - The text to be converted into a QR Code.
+ * @returns {string} qrCodeBase64 - The base64-encoded image of the generated QR Code.
+ */
+function generateQRCodeBase64(text) {
+  var encodedText = encodeURIComponent(text);
+  var chartUrl = 'https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=' + encodedText;
+  var imageUrl = UrlFetchApp.fetch(chartUrl).getBlob().getAs('image/png');
+  var qrCodeBase64 = Utilities.base64Encode(imageUrl.getBytes());
+  return qrCodeBase64;
+}
+/**
+ * Displays a pop-up/alert in the spreadsheet.
+ * @param {string} message - The desired pop-up message.
+ * @param {string} status - The status of the message. You can replace it with "warning", "danger", or "success".
+ */
 function alertMaker(message, status) {
   var ui = SpreadsheetApp.getUi();
   ui.alert(status, message, ui.ButtonSet.OK);
 }
 
 /**
- * Mengacak dan mengganti pilihan teks dalam tanda kurung kurawal.
- * @param {string} text - Teks yang akan diacak dan diganti.
- * @return {string} - Teks yang telah diacak dan diganti.
+ * Spins and replaces text within curly braces.
+ * @param {string} text - The text to be spun and replaced.
+ * @returns {string} - The spun and replaced text.
  */
 function spinText(text) {
   var spunText = text.replace(/{([^{}]*)}/g, function(match, choices) {
@@ -22,6 +66,7 @@ function spinText(text) {
   });
   return spunText;
 }
+
 /**
  * Removes duplicate rows from the current sheet.
  */
@@ -37,10 +82,11 @@ function removeDuplicates() {
   const newData = Object.values(uniqueData);
   sheet.getRange(1, 1, newData.length, newData[0].length).setValues(newData);
 }
+
 /**
- * melakukan check url / server pada suatu website, bisa dikakses atau tidak (online atau offline)
- * @param {string} url - url website yang akan diacak dan diganti.
- * @return {bool} - true and false, true for online and false for offline
+ * Checks the status of a website URL or server (online or offline).
+ * @param {string} url - The URL of the website to be checked.
+ * @returns {boolean} - true for online, false for offline.
  */
 function checkServer(url) {
   try {
@@ -50,31 +96,32 @@ function checkServer(url) {
     if (responseCode == 200) {
       return true; // Server online
     } else {
-      return false; // Server offline atau respons tidak valid
+      return false; // Server offline or invalid response
     }
   } catch (error) {
-    return false; // Terjadi kesalahan saat melakukan ping
+    return false; // Error occurred while pinging
   }
 }
+
 /**
- * set colom pada spreadsheet without link sheet
- * @param {string} worsheet - nama worksheet anda
- * @param {string} cellcolomn - kolom yang ingin di ubah
- * @param {string} value - value dari peruban tersebut
+ * Sets the value of a column in a spreadsheet without linking to the sheet.
+ * @param {string} worksheet - Your worksheet name.
+ * @param {string} cellcolomn - The column you want to change.
+ * @param {string} value - The value to set.
  */
-function setvalue(worsheet, cellcolomn, value){
+function setValue(worksheet, cellcolomn, value) {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = spreadsheet.getSheetByName(worsheet);
+  var sheet = spreadsheet.getSheetByName(worksheet);
   var cell = sheet.getRange(cellcolomn);
   cell.setValue(value);
 }
 
 /**
- * Mencetak spreadsheet menjadi file pdf dan menyimpannya di google drive
- * @param {string}  spreadsheetId - Teks yang akan diacak dan diganti.
- * @param {string}  sheetName - Teks yang akan diacak dan diganti.
- * @param {string}  folderId - Teks yang akan diacak dan diganti.
- * @return {string} idfile -  id file yang digunakan untuk download file
+ * Converts the spreadsheet to a PDF file and saves it in Google Drive.
+ * @param {string} spreadsheetId - The ID of the spreadsheet.
+ * @param {string} sheetName - The name of the sheet to convert.
+ * @param {string} folderId - The ID of the folder to save the PDF file in.
+ * @returns {string} idfile - The ID of the file used for downloading the file.
  */
 function convertSpreadsheetToPDF(spreadsheetId, sheetName, folderId) {
   var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
@@ -105,7 +152,6 @@ function convertSpreadsheetToPDF(spreadsheetId, sheetName, folderId) {
   var idfile = pdfFile.getId();
   return idfile;
 }
-
 function copySpreadsheet(newName) {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var newSpreadsheet = spreadsheet.copy(newName);
