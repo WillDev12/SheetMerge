@@ -1,4 +1,15 @@
 /**
+ * membuat pop up / alert di spreadsheet
+ * @param {string} message - Teks pop up yang di inginkan
+ * @return {string} status -  Status pesan, anda bisa menggantinya dengan warning, danger, ataupun success
+ */
+
+function alertMaker(message, status) {
+  var ui = SpreadsheetApp.getUi();
+  ui.alert(status, message, ui.ButtonSet.OK);
+}
+
+/**
  * Mengacak dan mengganti pilihan teks dalam tanda kurung kurawal.
  * @param {string} text - Teks yang akan diacak dan diganti.
  * @return {string} - Teks yang telah diacak dan diganti.
