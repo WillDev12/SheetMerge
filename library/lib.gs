@@ -1,3 +1,99 @@
+/**
+ * Mengacak dan mengganti pilihan teks dalam tanda kurung kurawal.
+ * @param {string} text - Teks yang akan diacak dan diganti.
+ * @return {string} - Teks yang telah diacak dan diganti.
+ */
+function spinText(text) {
+  var spunText = text.replace(/{([^{}]*)}/g, function(match, choices) {
+    var choicesArray = choices.split("|");
+    var randomIndex = Math.floor(Math.random() * choicesArray.length);
+    return choicesArray[randomIndex];
+  });
+  return spunText;
+}
+/**
+ * Removes duplicate rows from the current sheet.
+ */
+function removeDuplicates() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const data = sheet.getDataRange().getValues();
+  const uniqueData = {};
+  for (let row of data) {
+    const key = row.join();
+    uniqueData[key] = uniqueData[key] || row;
+  }
+  sheet.clearContents();
+  const newData = Object.values(uniqueData);
+  sheet.getRange(1, 1, newData.length, newData[0].length).setValues(newData);
+}
+/**
+ * melakukan check url / server pada suatu website, bisa dikakses atau tidak (online atau offline)
+ * @param {string} url - url website yang akan diacak dan diganti.
+ * @return {bool} - true and false, true for online and false for offline
+ */
+function checkServer(url) {
+  try {
+    var response = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
+    var responseCode = response.getResponseCode();
+    
+    if (responseCode == 200) {
+      return true; // Server online
+    } else {
+      return false; // Server offline atau respons tidak valid
+    }
+  } catch (error) {
+    return false; // Terjadi kesalahan saat melakukan ping
+  }
+}
+/**
+ * set colom pada spreadsheet without link sheet
+ * @param {string} worsheet - nama worksheet anda
+ * @param {string} cellcolomn - kolom yang ingin di ubah
+ * @param {string} value - value dari peruban tersebut
+ */
+function setvalue(worsheet, cellcolomn, value){
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = spreadsheet.getSheetByName(worsheet);
+  var cell = sheet.getRange(cellcolomn);
+  cell.setValue(value);
+}
+
+/**
+ * Mencetak spreadsheet menjadi file pdf dan menyimpannya di google drive
+ * @param {string}  spreadsheetId - Teks yang akan diacak dan diganti.
+ * @param {string}  sheetName - Teks yang akan diacak dan diganti.
+ * @param {string}  folderId - Teks yang akan diacak dan diganti.
+ * @return {string} idfile -  id file yang digunakan untuk download file
+ */
+function convertSpreadsheetToPDF(spreadsheetId, sheetName, folderId) {
+  var spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+  var sheet = spreadsheet.getSheetByName(sheetName);
+  
+  var url = "https://docs.google.com/spreadsheets/d/" + spreadsheetId + "/export?exportFormat=pdf";
+  url += "&format=pdf";
+  url += "&gid=" + sheet.getSheetId();
+  url += "&size=A4";
+  url += "&portrait=true";
+  url += "&scale=4";
+  url += "&sheetnames=false&printtitle=false&pagenumbers=false";
+  url += "&gridlines=false";
+  url += "&fzr=false";
+
+  var pdfBlob = UrlFetchApp.fetch(url, {
+    headers: {
+      Authorization: "Bearer " + ScriptApp.getOAuthToken()
+    }
+  }).getBlob();
+
+  var timestamp = new Date().getTime();
+  var pdfFileName = sheetName + "_" + timestamp + ".pdf";
+
+  var folder = DriveApp.getFolderById(folderId);
+  var pdfFile = folder.createFile(pdfBlob).setName(pdfFileName);
+
+  var idfile = pdfFile.getId();
+  return idfile;
+}
 
 function copySpreadsheet(newName) {
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
